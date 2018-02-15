@@ -21,10 +21,10 @@
 		E0CD64E82034FD8700E8710F /* TrendingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CD64E72034FD8700E8710F /* TrendingTableViewCell.swift */; };
 		E0CD64EA2034FF3E00E8710F /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CD64E92034FF3E00E8710F /* Style.swift */; };
 		E0CD64EC2035028500E8710F /* ProjectDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CD64EB2035028500E8710F /* ProjectDetailViewController.swift */; };
-		E0CD64EF203573DC00E8710F /* LabelWithIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CD64EE203573DC00E8710F /* LabelWithIconView.swift */; };
-		E0CD64F1203573EC00E8710F /* LableWithIconView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0CD64F0203573EC00E8710F /* LableWithIconView.xib */; };
 		E0CD64F42035765100E8710F /* TrendingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CD64F32035765100E8710F /* TrendingViewModel.swift */; };
 		E0CD64F6203577FD00E8710F /* TrendingCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CD64F5203577FD00E8710F /* TrendingCellViewModel.swift */; };
+		E0CD64F8203587C200E8710F /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CD64F7203587C200E8710F /* Owner.swift */; };
+		E0CD64FA20358CFF00E8710F /* BasicViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CD64F920358CFF00E8710F /* BasicViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,10 +65,10 @@
 		E0CD64E72034FD8700E8710F /* TrendingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingTableViewCell.swift; sourceTree = "<group>"; };
 		E0CD64E92034FF3E00E8710F /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		E0CD64EB2035028500E8710F /* ProjectDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailViewController.swift; sourceTree = "<group>"; };
-		E0CD64EE203573DC00E8710F /* LabelWithIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelWithIconView.swift; sourceTree = "<group>"; };
-		E0CD64F0203573EC00E8710F /* LableWithIconView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LableWithIconView.xib; sourceTree = "<group>"; };
 		E0CD64F32035765100E8710F /* TrendingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingViewModel.swift; sourceTree = "<group>"; };
 		E0CD64F5203577FD00E8710F /* TrendingCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingCellViewModel.swift; sourceTree = "<group>"; };
+		E0CD64F7203587C200E8710F /* Owner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
+		E0CD64F920358CFF00E8710F /* BasicViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,7 +119,6 @@
 		E0CD64AC2034AEEE00E8710F /* Github Trends */ = {
 			isa = PBXGroup;
 			children = (
-				E0CD64ED2035739E00E8710F /* CustomViews */,
 				E0CD64E62034FD6F00E8710F /* Cells */,
 				E0CD64E52034FD2600E8710F /* ViewControllers */,
 				E0CD64F22035762000E8710F /* ViewModels */,
@@ -167,6 +166,7 @@
 			children = (
 				E0CD64E12034F3BD00E8710F /* Repository.swift */,
 				E0CD64E32034F46200E8710F /* Response.swift */,
+				E0CD64F7203587C200E8710F /* Owner.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -188,20 +188,12 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		E0CD64ED2035739E00E8710F /* CustomViews */ = {
-			isa = PBXGroup;
-			children = (
-				E0CD64EE203573DC00E8710F /* LabelWithIconView.swift */,
-				E0CD64F0203573EC00E8710F /* LableWithIconView.xib */,
-			);
-			path = CustomViews;
-			sourceTree = "<group>";
-		};
 		E0CD64F22035762000E8710F /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 				E0CD64F32035765100E8710F /* TrendingViewModel.swift */,
 				E0CD64F5203577FD00E8710F /* TrendingCellViewModel.swift */,
+				E0CD64F920358CFF00E8710F /* BasicViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -315,7 +307,6 @@
 			files = (
 				E0CD64B82034AEEE00E8710F /* LaunchScreen.storyboard in Resources */,
 				E0CD64B52034AEEE00E8710F /* Assets.xcassets in Resources */,
-				E0CD64F1203573EC00E8710F /* LableWithIconView.xib in Resources */,
 				E0CD64B32034AEEE00E8710F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,8 +332,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0CD64F8203587C200E8710F /* Owner.swift in Sources */,
 				E0CD64B02034AEEE00E8710F /* TrendingViewController.swift in Sources */,
 				E0CD64F6203577FD00E8710F /* TrendingCellViewModel.swift in Sources */,
+				E0CD64FA20358CFF00E8710F /* BasicViewModel.swift in Sources */,
 				E0CD64DC2034AF1F00E8710F /* HttpClient.swift in Sources */,
 				E0CD64E22034F3BD00E8710F /* Repository.swift in Sources */,
 				E0CD64E82034FD8700E8710F /* TrendingTableViewCell.swift in Sources */,
@@ -350,7 +343,6 @@
 				E0CD64E42034F46200E8710F /* Response.swift in Sources */,
 				E0CD64DF2034EDCF00E8710F /* Calendar.swift in Sources */,
 				E0CD64EC2035028500E8710F /* ProjectDetailViewController.swift in Sources */,
-				E0CD64EF203573DC00E8710F /* LabelWithIconView.swift in Sources */,
 				E0CD64EA2034FF3E00E8710F /* Style.swift in Sources */,
 				E0CD64F42035765100E8710F /* TrendingViewModel.swift in Sources */,
 			);

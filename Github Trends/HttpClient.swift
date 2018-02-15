@@ -12,6 +12,41 @@ class HttpClient {
     let session = URLSession.shared
     let githubApi = "https://api.github.com"
 
+    public func downloadReadme(repository: String, completion: @escaping (String?) -> Void) {
+        let urlString = "https://raw.githubusercontent.com/\(repository)/master/README.md"
+        guard let url = URL(string: urlString) else {
+            completion(nil)
+            return
+        }
+
+        let task = session.dataTask(with: url) { (data, response, error) in
+            guard let data = data, let readme = String(data: data, encoding: .utf8) else {
+                completion(nil)
+                return
+            }
+
+            completion(readme)
+        }
+        task.resume()
+    }
+
+    public func downloadImage(urlString: String, completion: @escaping (UIImage?) -> Void) {
+        guard let imageUrl = URL(string: urlString) else {
+            completion(nil)
+            return
+        }
+
+        let task = session.dataTask(with: imageUrl) { (data, response, error) in
+            guard let data = data, let image = UIImage(data: data) else {
+                completion(nil)
+                return
+            }
+            completion(image)
+        }
+
+        task.resume()
+    }
+
     public func fetchTrendingRepos(completion: @escaping ([Repository]?) -> Void) {
 
         guard

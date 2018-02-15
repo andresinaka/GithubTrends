@@ -8,12 +8,12 @@
 
 import UIKit
 
-class TrendingViewModel {
+class TrendingViewModel: BasicViewModel {
     let httpClient: HttpClient
     var repositories: [Repository] = []
-    var reloadTableViewClosure: (()->())?
-    var updateLoadingClosure: ((Bool)->())?
-    var errorClosure: ((String)->())?
+    var updateTableView: (()->())?
+    var updateLoading: ((Bool)->())?
+    var updateError: ((String)->())?
 
     init(httpClient: HttpClient) {
         self.httpClient = httpClient
@@ -21,19 +21,19 @@ class TrendingViewModel {
 
     private var cellViewModels: [TrendingCellViewModel] = [TrendingCellViewModel]() {
         didSet {
-            self.reloadTableViewClosure?()
+            self.updateTableView?()
         }
     }
 
     var error: String = "" {
         didSet {
-            self.errorClosure?(error)
+            self.updateError?(error)
         }
     }
 
     var isLoading: Bool = false {
         didSet {
-            self.updateLoadingClosure?(isLoading)
+            self.updateLoading?(isLoading)
         }
     }
 
@@ -45,7 +45,7 @@ class TrendingViewModel {
         return cellViewModels[indexPath.row]
     }
 
-    func fetchData() {
+    override func fetchData() {
         isLoading = true
         httpClient.fetchTrendingRepos { [weak self] (repositories) in
             self?.isLoading = false
@@ -59,10 +59,12 @@ class TrendingViewModel {
 
     private func handleResponse(repositories: [Repository]) {
         let trendingCellViewModels = repositories.map { (repository) -> TrendingCellViewModel in
-            let trendingCellViewModel = TrendingCellViewModel()
+            let trendingCellViewModel = TrendingCellViewModel(httpClient: httpClient)
             trendingCellViewModel.descriptionText = repository.description
             trendingCellViewModel.nameText = repository.fullName
-            trendingCellViewModel.starsCountText = String(describing: repository.stars)
+            trendingCellViewModel.starsCountText = "\(repository.stars ?? 0)"
+            trendingCellViewModel.forksCountText =  "\(repository.forks ?? 0)"
+            trendingCellViewModel.owner = repository.owner
 
             return trendingCellViewModel
         }

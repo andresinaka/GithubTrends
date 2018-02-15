@@ -28,21 +28,23 @@ class TrendingViewController: UIViewController {
     }
 
     func initializeViewModelBindings() {
-        viewModel.reloadTableViewClosure = { [weak self] in
+        viewModel.updateTableView = { [weak self] in
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
             }
         }
 
-        viewModel.updateLoadingClosure = { [weak self] (loading) in
-            guard let strongSelf = self else { return }
-
+        viewModel.updateLoading = { [weak self] (loading) in
             DispatchQueue.main.async {
-                strongSelf.loadingIndicatorView.isHidden = !loading
+                if(loading) {
+                    self?.loadingIndicatorView.startAnimating()
+                } else {
+                    self?.loadingIndicatorView.stopAnimating()
+                }
             }
         }
 
-        viewModel.errorClosure = { [weak self] (errorString) in
+        viewModel.updateError = { [weak self] (errorString) in
             let alertController = UIAlertController(
                 title: "",
                 message: errorString,
@@ -52,14 +54,17 @@ class TrendingViewController: UIViewController {
                 UIAlertAction(title: "Ok", style: .default, handler: nil)
             )
 
-            self?.present(alertController, animated: true, completion: nil)
+            DispatchQueue.main.async {
+                self?.present(alertController, animated: true, completion: nil)
+            }
         }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if(segue.identifier == "RepoDetail") {
-            print("FAFAFA")
-        }
+        guard let viewController = segue.destination as? ProjectDetailViewController,
+            let indexPath = sender as? IndexPath else { return }
+
+        viewController.viewModel = viewModel.getCellViewModel(at: indexPath)
     }
 }
 
