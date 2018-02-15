@@ -8,6 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		E0880F222035A8E200C73859 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0880F212035A8E200C73859 /* String.swift */; };
+		E0880F252035ABF200C73859 /* repositories.json in Resources */ = {isa = PBXBuildFile; fileRef = E0880F242035ABF200C73859 /* repositories.json */; };
+		E0880F282035ACBD00C73859 /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0880F272035ACBD00C73859 /* TestHelpers.swift */; };
+		E0880F2A2035ACEF00C73859 /* RepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0880F292035ACEF00C73859 /* RepositoryTests.swift */; };
+		E0880F2B2035AD7800C73859 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CD64E12034F3BD00E8710F /* Repository.swift */; };
+		E0880F2C2035AD7800C73859 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CD64E32034F46200E8710F /* Response.swift */; };
+		E0880F2D2035AD7800C73859 /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CD64F7203587C200E8710F /* Owner.swift */; };
+		E0880F2F2035AE4D00C73859 /* ResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0880F2E2035AE4D00C73859 /* ResponseTests.swift */; };
+		E0880F322035B01500C73859 /* RepositoryViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0880F312035B01500C73859 /* RepositoryViewModelTests.swift */; };
+		E0880F332035B01900C73859 /* RepositoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CD64F32035765100E8710F /* RepositoriesViewModel.swift */; };
+		E0880F342035B01900C73859 /* RepositoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CD64F5203577FD00E8710F /* RepositoryViewModel.swift */; };
+		E0880F352035B01900C73859 /* BasicViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CD64F920358CFF00E8710F /* BasicViewModel.swift */; };
+		E0880F362035B02900C73859 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0880F212035A8E200C73859 /* String.swift */; };
+		E0880F372035B05500C73859 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CD64DB2034AF1F00E8710F /* HttpClient.swift */; };
+		E0880F3A2035B08400C73859 /* HttpClientMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0880F392035B08400C73859 /* HttpClientMock.swift */; };
+		E0880F3B2035B21200C73859 /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CD64DE2034EDCE00E8710F /* Calendar.swift */; };
+		E0880F3D2035B41F00C73859 /* RepositoriesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0880F3C2035B41F00C73859 /* RepositoriesViewModelTests.swift */; };
 		E0CD64AE2034AEEE00E8710F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CD64AD2034AEEE00E8710F /* AppDelegate.swift */; };
 		E0CD64B02034AEEE00E8710F /* TrendingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CD64AF2034AEEE00E8710F /* TrendingViewController.swift */; };
 		E0CD64B32034AEEE00E8710F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0CD64B12034AEEE00E8710F /* Main.storyboard */; };
@@ -47,6 +63,13 @@
 
 /* Begin PBXFileReference section */
 		E0880F212035A8E200C73859 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		E0880F242035ABF200C73859 /* repositories.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = repositories.json; sourceTree = "<group>"; };
+		E0880F272035ACBD00C73859 /* TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
+		E0880F292035ACEF00C73859 /* RepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTests.swift; sourceTree = "<group>"; };
+		E0880F2E2035AE4D00C73859 /* ResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseTests.swift; sourceTree = "<group>"; };
+		E0880F312035B01500C73859 /* RepositoryViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryViewModelTests.swift; sourceTree = "<group>"; };
+		E0880F392035B08400C73859 /* HttpClientMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClientMock.swift; sourceTree = "<group>"; };
+		E0880F3C2035B41F00C73859 /* RepositoriesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesViewModelTests.swift; sourceTree = "<group>"; };
 		E0CD64AA2034AEEE00E8710F /* Github Trends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Github Trends.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0CD64AD2034AEEE00E8710F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0CD64AF2034AEEE00E8710F /* TrendingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +121,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E0880F232035ABDE00C73859 /* Documents */ = {
+			isa = PBXGroup;
+			children = (
+				E0880F242035ABF200C73859 /* repositories.json */,
+			);
+			path = Documents;
+			sourceTree = "<group>";
+		};
+		E0880F262035AC9400C73859 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E0880F292035ACEF00C73859 /* RepositoryTests.swift */,
+				E0880F2E2035AE4D00C73859 /* ResponseTests.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E0880F302035AFEC00C73859 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				E0880F312035B01500C73859 /* RepositoryViewModelTests.swift */,
+				E0880F3C2035B41F00C73859 /* RepositoriesViewModelTests.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		E0880F382035B07800C73859 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				E0880F392035B08400C73859 /* HttpClientMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		E0CD64A12034AEEE00E8710F = {
 			isa = PBXGroup;
 			children = (
@@ -141,7 +198,12 @@
 			isa = PBXGroup;
 			children = (
 				E0CD64C22034AEEF00E8710F /* Github_TrendsTests.swift */,
+				E0880F382035B07800C73859 /* Mocks */,
+				E0880F232035ABDE00C73859 /* Documents */,
+				E0880F262035AC9400C73859 /* Models */,
+				E0880F302035AFEC00C73859 /* ViewModels */,
 				E0CD64C42034AEEF00E8710F /* Info.plist */,
+				E0880F272035ACBD00C73859 /* TestHelpers.swift */,
 			);
 			path = "Github TrendsTests";
 			sourceTree = "<group>";
@@ -318,6 +380,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0880F252035ABF200C73859 /* repositories.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,7 +419,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0880F322035B01500C73859 /* RepositoryViewModelTests.swift in Sources */,
 				E0CD64C32034AEEF00E8710F /* Github_TrendsTests.swift in Sources */,
+				E0880F342035B01900C73859 /* RepositoryViewModel.swift in Sources */,
+				E0880F2D2035AD7800C73859 /* Owner.swift in Sources */,
+				E0880F3D2035B41F00C73859 /* RepositoriesViewModelTests.swift in Sources */,
+				E0880F3B2035B21200C73859 /* Calendar.swift in Sources */,
+				E0880F282035ACBD00C73859 /* TestHelpers.swift in Sources */,
+				E0880F352035B01900C73859 /* BasicViewModel.swift in Sources */,
+				E0880F362035B02900C73859 /* String.swift in Sources */,
+				E0880F372035B05500C73859 /* HttpClient.swift in Sources */,
+				E0880F332035B01900C73859 /* RepositoriesViewModel.swift in Sources */,
+				E0880F2F2035AE4D00C73859 /* ResponseTests.swift in Sources */,
+				E0880F2A2035ACEF00C73859 /* RepositoryTests.swift in Sources */,
+				E0880F2B2035AD7800C73859 /* Repository.swift in Sources */,
+				E0880F3A2035B08400C73859 /* HttpClientMock.swift in Sources */,
+				E0880F2C2035AD7800C73859 /* Response.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

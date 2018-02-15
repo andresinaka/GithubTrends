@@ -75,6 +75,7 @@ class RepositoryViewModel: BasicViewModel {
     }
 
     override func fetchData() {
+        
         self.updateStarsCountText?(starsCountText)
         self.updateDescriptionText?(descriptionText)
         self.updateOwnerUsername?(owner?.username)
