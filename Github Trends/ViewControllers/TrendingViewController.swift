@@ -13,9 +13,9 @@ class TrendingViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var loadingIndicatorView: UIActivityIndicatorView!
 
-    lazy var viewModel: TrendingViewModel = {
+    lazy var viewModel: RepositoriesViewModel = {
         let httpClient = HttpClient()
-        return TrendingViewModel(httpClient: httpClient)
+        return RepositoriesViewModel(httpClient: httpClient)
     }()
 
     override func viewDidLoad() {

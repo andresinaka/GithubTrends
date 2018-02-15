@@ -15,8 +15,8 @@ class TrendingTableViewCell: UITableViewCell {
     @IBOutlet weak var starsCountLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
 
-    func configure(viewModel: TrendingCellViewModel) {
-        nameLabel.text = viewModel.nameText
+    func configure(viewModel: RepositoryViewModel) {
+        nameLabel.text = viewModel.fullnameText
         starsCountLabel.text = viewModel.starsCountText
         descriptionLabel.text = viewModel.descriptionText
     }

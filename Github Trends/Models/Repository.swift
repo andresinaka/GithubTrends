@@ -9,7 +9,7 @@
 import UIKit
 
 struct Repository: Decodable {
-    let fullName: String?
+    let fullname: String?
     let id: Int?
     let stars: Int?
     let forks: Int?
@@ -18,7 +18,7 @@ struct Repository: Decodable {
     let owner: Owner?
 
     private enum CodingKeys : String, CodingKey {
-        case name, forks = "forks_count", fullName = "full_name", id, stars = "stargazers_count", description, owner
+        case name, forks = "forks_count", fullname = "full_name", id, stars = "stargazers_count", description, owner
     }
 }
 

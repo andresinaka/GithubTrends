@@ -1,5 +1,5 @@
 //
-//  TrendingCellViewModel.swift
+//  RepositoryViewModel.swift
 //  Github Trends
 //
 //  Created by Andres on 15/02/2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TrendingCellViewModel: BasicViewModel {
+class RepositoryViewModel: BasicViewModel {
     let httpClient: HttpClient
 
     var updateStarsCountText: ((String?)->())?
@@ -18,6 +18,7 @@ class TrendingCellViewModel: BasicViewModel {
     var updateNameText: ((String?)->())?
     var updateOwnerImage: ((UIImage)->())?
     var updateReadme: ((String?)->())?
+    var updateFullnameText: ((String?)->())?
 
     init(httpClient: HttpClient) {
         self.httpClient = httpClient
@@ -29,10 +30,15 @@ class TrendingCellViewModel: BasicViewModel {
         }
     }
 
-
     var nameText: String? {
         didSet {
             self.updateNameText?(nameText)
+        }
+    }
+
+    var fullnameText: String? {
+        didSet {
+            self.updateFullnameText?(fullnameText)
         }
     }
 
@@ -81,7 +87,7 @@ class TrendingCellViewModel: BasicViewModel {
             self?.ownerImage = image
         }
 
-        let repositoryName = nameText ?? ""
+        let repositoryName = fullnameText ?? ""
         httpClient.downloadReadme(repository: repositoryName) { [weak self] (readme) in
             guard let readme = readme else { return }
             self?.readme = readme

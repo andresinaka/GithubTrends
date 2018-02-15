@@ -17,7 +17,7 @@ class ProjectDetailViewController: UIViewController {
     @IBOutlet weak var forksButton: UIButton!
     @IBOutlet weak var starsButton: UIButton!
 
-    var viewModel: TrendingCellViewModel?
+    var viewModel: RepositoryViewModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()

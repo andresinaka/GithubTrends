@@ -1,5 +1,5 @@
 //
-//  TrendingViewModel.swift
+//  RepositoriesViewModel.swift
 //  Github Trends
 //
 //  Created by Andres on 15/02/2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TrendingViewModel: BasicViewModel {
+class RepositoriesViewModel: BasicViewModel {
     let httpClient: HttpClient
     var repositories: [Repository] = []
     var updateTableView: (()->())?
@@ -19,7 +19,7 @@ class TrendingViewModel: BasicViewModel {
         self.httpClient = httpClient
     }
 
-    private var cellViewModels: [TrendingCellViewModel] = [TrendingCellViewModel]() {
+    private var cellViewModels: [RepositoryViewModel] = [RepositoryViewModel]() {
         didSet {
             self.updateTableView?()
         }
@@ -41,7 +41,7 @@ class TrendingViewModel: BasicViewModel {
         return cellViewModels.count
     }
 
-    func getCellViewModel( at indexPath: IndexPath ) -> TrendingCellViewModel {
+    func getCellViewModel( at indexPath: IndexPath ) -> RepositoryViewModel {
         return cellViewModels[indexPath.row]
     }
 
@@ -58,10 +58,11 @@ class TrendingViewModel: BasicViewModel {
     }
 
     private func handleResponse(repositories: [Repository]) {
-        let trendingCellViewModels = repositories.map { (repository) -> TrendingCellViewModel in
-            let trendingCellViewModel = TrendingCellViewModel(httpClient: httpClient)
+        let trendingCellViewModels = repositories.map { (repository) -> RepositoryViewModel in
+            let trendingCellViewModel = RepositoryViewModel(httpClient: httpClient)
             trendingCellViewModel.descriptionText = repository.description
-            trendingCellViewModel.nameText = repository.fullName
+            trendingCellViewModel.nameText = repository.name
+            trendingCellViewModel.fullnameText = repository.fullname
             trendingCellViewModel.starsCountText = "\(repository.stars ?? 0)"
             trendingCellViewModel.forksCountText =  "\(repository.forks ?? 0)"
             trendingCellViewModel.owner = repository.owner
