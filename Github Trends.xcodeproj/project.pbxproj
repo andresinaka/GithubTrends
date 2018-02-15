@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E0880F222035A8E200C73859 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0880F212035A8E200C73859 /* String.swift */; };
 		E0CD64AE2034AEEE00E8710F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CD64AD2034AEEE00E8710F /* AppDelegate.swift */; };
 		E0CD64B02034AEEE00E8710F /* TrendingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CD64AF2034AEEE00E8710F /* TrendingViewController.swift */; };
 		E0CD64B32034AEEE00E8710F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0CD64B12034AEEE00E8710F /* Main.storyboard */; };
@@ -45,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E0880F212035A8E200C73859 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		E0CD64AA2034AEEE00E8710F /* Github Trends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Github Trends.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0CD64AD2034AEEE00E8710F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0CD64AF2034AEEE00E8710F /* TrendingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingViewController.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				E0CD64DE2034EDCE00E8710F /* Calendar.swift */,
+				E0880F212035A8E200C73859 /* String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 				E0CD64B02034AEEE00E8710F /* TrendingViewController.swift in Sources */,
 				E0CD64F6203577FD00E8710F /* RepositoryViewModel.swift in Sources */,
 				E0CD64FA20358CFF00E8710F /* BasicViewModel.swift in Sources */,
+				E0880F222035A8E200C73859 /* String.swift in Sources */,
 				E0CD64DC2034AF1F00E8710F /* HttpClient.swift in Sources */,
 				E0CD64E22034F3BD00E8710F /* Repository.swift in Sources */,
 				E0CD64E82034FD8700E8710F /* TrendingTableViewCell.swift in Sources */,

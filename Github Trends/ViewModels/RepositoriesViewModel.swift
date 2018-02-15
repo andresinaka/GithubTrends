@@ -53,11 +53,28 @@ class RepositoriesViewModel: BasicViewModel {
                 self?.error = "Something went wrong"
                 return
             }
-            self?.handleResponse(repositories: repos)
+            self?.repositories = repos
+            self?.handleRepositories(repositories: repos)
         }
     }
 
-    private func handleResponse(repositories: [Repository]) {
+    public func search(text: String){
+        DispatchQueue.global(qos: .background).async {
+            if(text == "") {
+                self.handleRepositories(repositories: self.repositories)
+                return
+            }
+
+            let repos = self.repositories.filter { (repository) -> Bool in
+                guard let fullname = repository.fullname else { return false }
+                return fullname.containsIgnoringCase(find: text)
+            }
+
+            self.handleRepositories(repositories: repos)
+        }
+    }
+
+     func handleRepositories(repositories: [Repository]) {
         let trendingCellViewModels = repositories.map { (repository) -> RepositoryViewModel in
             let trendingCellViewModel = RepositoryViewModel(httpClient: httpClient)
             trendingCellViewModel.descriptionText = repository.description

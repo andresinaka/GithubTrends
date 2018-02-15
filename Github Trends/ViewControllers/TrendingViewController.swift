@@ -12,6 +12,7 @@ import UIKit
 class TrendingViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var loadingIndicatorView: UIActivityIndicatorView!
+    @IBOutlet weak var searchBar: UISearchBar!
 
     lazy var viewModel: RepositoriesViewModel = {
         let httpClient = HttpClient()
@@ -22,6 +23,7 @@ class TrendingViewController: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        searchBar.delegate = self
 
         initializeViewModelBindings()
         viewModel.fetchData()
@@ -68,8 +70,15 @@ class TrendingViewController: UIViewController {
     }
 }
 
+extension TrendingViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        viewModel.search(text: searchText)
+    }
+}
+
 extension TrendingViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        searchBar.resignFirstResponder()
         performSegue(withIdentifier: "RepoDetail", sender: indexPath)
         tableView.deselectRow(at: indexPath, animated: true)
     }
