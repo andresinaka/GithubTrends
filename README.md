@@ -15,8 +15,10 @@ I'm not using pods nor carthage.
 
 To run project just open `Github Trends.xcodeproj` and run.
 
-
 ## Tests
 
 Added tests for models and view models mocking my HttpClient.
 
+## Sample
+
+![Sample](recording.gif)
